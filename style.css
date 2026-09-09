@@ -1,0 +1,304 @@
+/*iOS font */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  background: #F6DFCB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* Background */
+.scene {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  filter: blur(0.5px);
+}
+
+.blob-a {
+  width: 900px;
+  height: 900px;
+  background: #B7B6EF;
+  top: -320px;
+  left: -260px;
+  transform: rotate(12deg);
+}
+
+.blob-b {
+  width: 620px;
+  height: 620px;
+  background: #B7B6EF;
+  bottom: -300px;
+  right: -220px;
+  border-radius: 55% 45% 40% 60% / 55% 60% 40% 45%;
+  transform: rotate(-18deg);
+}
+
+/* The "note" card*/
+.note {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  background: #FBFDFB;
+  border-radius: 28px;
+  box-shadow: 0 30px 60px rgba(30, 20, 60, 0.25);
+  padding: 22px 24px 14px;
+}
+
+/*Top Bar*/
+.note-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #E8A23A;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.note-meta {
+  text-align: center;
+  color: #b9b9b9;
+  font-size: 0.72rem;
+  margin: 0 0 10px;
+}
+
+.note-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #1c1c1e;
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+
+/*Add-Task Row (checklist line)*/
+.add-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2px;
+}
+
+.check-circle--ghost {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: 2px dashed #d8d8d8;
+  background: transparent;
+}
+
+#taskInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  color: #1c1c1e;
+  font-family: inherit;
+  background: transparent;
+  padding: 6px 0;
+}
+
+#taskInput::placeholder {
+  color: #c2c2c2;
+}
+
+.add-btn {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #F0A93B;
+  color: white;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+
+.add-btn:hover {
+  background: #db9327;
+}
+
+.error {
+  min-height: 16px;
+  color: #E0554A;
+  font-size: 0.8rem;
+  margin: 4px 0 2px 38px;
+}
+
+/*task list*/
+.task-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 11px 0;
+}
+
+/*round orange checkmark*/
+.check-circle {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  background: transparent;
+  border: 2px solid #d8d8d8;
+  padding: 0;
+}
+
+.check-circle svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.task-item.done .check-circle {
+  background: #F0A93B;
+  border-color: #F0A93B;
+}
+
+.task-item.done .check-circle svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.task-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.05rem;
+  color: #1c1c1e;
+  word-break: break-word;
+  padding-top: 1px;
+}
+
+.task-item.done .task-text {
+  color: #b9b9b9;
+  text-decoration: line-through;
+  text-decoration-color: #c9c9c9;
+}
+
+.task-delete {
+  background: none;
+  border: none;
+  color: #d6d6d6;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 2px;
+  flex-shrink: 0;
+}
+
+.task-delete:hover {
+  color: #E0554A;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  color: #c2c2c2;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 18px 0;
+}
+
+.empty.show {
+  display: block;
+}
+
+/*clear all*/
+.clear-all {
+  display: block;
+  margin: 10px auto 4px;
+  background: none;
+  border: none;
+  color: #cfcfcf;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.clear-all:hover {
+  color: #E0554A;
+}
+
+.clear-all:disabled {
+  cursor: not-allowed;
+  color: #e6b8b3;
+}
+
+/*bottom bar, styled like Notes app toolbar*/
+.note-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 6px 4px;
+  margin-top: 6px;
+  border-top: 1px solid #efefef;
+  color: #E8A23A;
+}
+
+.note-bottombar svg.active {
+  color: #E8A23A;
+}
+
+.note-bottombar svg {
+  color: #ecc48a;
+}
+
+/* Small screens*/
+@media (max-width: 420px) {
+  .note {
+    padding: 18px 18px 12px;
+  }
+  .blob-a, .blob-b {
+    filter: blur(0px);
+  }
+}
