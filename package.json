@@ -1,0 +1,12 @@
+{
+  "name": "auth-app",
+  "version": "1.0.0",
+  "description": "Simple User Signup and Login Authentication System (Express.js, POST-only API)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home | Bump</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="page active" id="page-welcome">
+    <h1>You're in<span class="comma">,</span></h1>
+    <p class="welcome-sub" id="welcome-sub">Welcome to Bump</p>
+
+    <div class="stage">
+      <div class="monster">
+        <div class="horn horn-left"></div>
+        <div class="horn horn-right"></div>
+        <div class="tuft"><span></span><span></span><span></span><span></span></div>
+        <div class="head">
+          <div class="eyes">
+            <div class="eye happy"></div>
+            <div class="eye happy"></div>
+          </div>
+          <div class="smile-mouth" style="width:150px;"></div>
+        </div>
+      </div>
+      <div class="hands">
+        <div class="hand"></div>
+        <div class="hand"></div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <button class="btn" id="welcome-logout">Log Out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+    var params = new URLSearchParams(window.location.search);
+    var user = params.get('user');
+    var action = params.get('action') || 'Signed in as';
+    var subEl = document.getElementById('welcome-sub');
+    if (user){
+      subEl.textContent = action + ' ' + user;
+    }
+    document.getElementById('welcome-logout').addEventListener('click', function(){
+      window.location.href = 'index.html';
+    });
+  })();
+</script>
+
+</body>
+</html>

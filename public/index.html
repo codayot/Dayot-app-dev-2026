@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign in with Bump</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- LANDING -->
+  <div class="page active" id="page-landing">
+    <h1>Welcome<span class="comma">,</span></h1>
+    <p class="tagline">let's get you settled in</p>
+
+    <div class="stage">
+      <div class="monster">
+        <div class="horn horn-left"></div>
+        <div class="horn horn-right"></div>
+        <div class="tuft"><span></span><span></span><span></span><span></span></div>
+        <div class="head">
+          <div class="eyes">
+            <div class="eye"><div class="pupil"></div></div>
+            <div class="eye"><div class="pupil"></div></div>
+          </div>
+          <div class="smile-mouth"></div>
+        </div>
+      </div>
+      <div class="hands">
+        <div class="hand"></div>
+        <div class="hand"></div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <button class="btn" id="go-signup">Sign Up</button>
+      <button class="btn-ghost" id="go-signin">Sign In</button>
+    </div>
+  </div>
+
+  <!-- SIGN UP -->
+  <div class="page" id="page-signup">
+    <button class="back-link" data-back="landing">&larr; back</button>
+    <h1 style="font-size:34px;">Sign Up<span class="comma">,</span></h1>
+    <p class="tagline">tell Bump a bit about you</p>
+
+    <div class="banner error" id="signup-banner"></div>
+
+    <div class="stage">
+      <div class="monster">
+        <div class="horn horn-left"></div>
+        <div class="horn horn-right"></div>
+        <div class="tuft"><span></span><span></span><span></span><span></span></div>
+        <div class="head">
+          <div class="eyes">
+            <div class="eye"><div class="pupil"></div></div>
+            <div class="eye"><div class="pupil"></div></div>
+          </div>
+
+          <form id="signup-form" novalidate class="mouth">
+            <div class="field">
+              <input type="text" id="su-email" placeholder="Email" autocomplete="email">
+              <span class="error-msg" id="su-email-error"></span>
+            </div>
+            <div class="field">
+              <input type="text" id="su-username" placeholder="Username" autocomplete="username">
+              <span class="error-msg" id="su-username-error"></span>
+            </div>
+            <div class="field">
+              <input type="password" id="su-password" placeholder="Password" autocomplete="new-password">
+              <span class="error-msg" id="su-password-error"></span>
+              <span class="hint">8+ characters, at least one number</span>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="hands">
+        <div class="hand"></div>
+        <div class="hand"></div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <button class="btn" id="signup-submit">Go</button>
+      <div class="link-row">Already have an account? <a data-goto="signin">Sign in</a></div>
+    </div>
+  </div>
+
+  <!-- SIGN IN -->
+  <div class="page" id="page-signin">
+    <button class="back-link" data-back="landing">&larr; back</button>
+    <h1 style="font-size:34px;">Sign In<span class="comma">,</span></h1>
+    <p class="tagline">good to see you again</p>
+
+    <div class="banner error" id="signin-banner"></div>
+
+    <div class="stage">
+      <div class="monster">
+        <div class="horn horn-left"></div>
+        <div class="horn horn-right"></div>
+        <div class="tuft"><span></span><span></span><span></span><span></span></div>
+        <div class="head">
+          <div class="eyes">
+            <div class="eye"><div class="pupil"></div></div>
+            <div class="eye"><div class="pupil"></div></div>
+          </div>
+
+          <form id="signin-form" novalidate class="mouth">
+            <div class="field">
+              <input type="text" id="si-username" placeholder="Username" autocomplete="username">
+              <span class="error-msg" id="si-username-error"></span>
+            </div>
+            <div class="field">
+              <input type="password" id="si-password" placeholder="Password" autocomplete="current-password">
+              <span class="error-msg" id="si-password-error"></span>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="hands">
+        <div class="hand"></div>
+        <div class="hand"></div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <button class="btn" id="signin-submit">Go</button>
+      <div class="link-row">New here? <a data-goto="signup">Create an account</a></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
